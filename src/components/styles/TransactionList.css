@@ -1,0 +1,159 @@
+.transaction-list-container {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.transaction-list-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  animation: rotateBackground 8s linear infinite;
+  z-index: 0;
+}
+
+.transaction-list-wrapper {
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.transaction-list {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  animation: slideInUp 1s ease-in-out;
+}
+
+.transaction-list th,
+.transaction-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.transaction-list th {
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  color: white;
+  font-weight: 600;
+}
+
+.transaction-list th.sortable {
+  cursor: pointer;
+}
+
+.transaction-list th.sortable:hover {
+  background: #5f9ea0;
+  transition: background-color 0.3s ease;
+}
+
+.transaction-list tr:hover {
+  background: rgba(116, 235, 213, 0.2);
+}
+
+.transaction-list td.amount {
+  text-align: right;
+  font-weight: 500;
+  color: #007bff;
+}
+
+.transaction-list td.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 5px 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 12px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.btn-edit:hover {
+  transform: scale(1.1);
+  background: #2575fc;
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+}
+
+.btn-delete:hover {
+  transform: scale(1.1);
+  background: #ff4b2b;
+}
+
+.btn-delete.confirm {
+  background: #ff0000;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,98 @@
+.budget-form-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--box-shadow);
+  animation: fadeIn 1.5s ease-in-out;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+/* Fade-in animation for the entire container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form container with slide-in animation */
+.budget-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Slide-in animation for the form */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Input fields with glowing focus effect */
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px 2px rgba(74, 111, 165, 0.5);
+  animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+/* Glowing focus animation for inputs */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 2px rgba(74, 111, 165, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px 5px rgba(74, 111, 165, 0.8);
+  }
+}
+
+/* 3D button animation */
+.btn-submit {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: white;
+  transition: transform 0.3s ease, background-color 0.2s;
+  transform: perspective(500px) translateZ(0);
+}
+
+.btn-submit:hover {
+  transform: perspective(500px) translateZ(10px);
+  background-color: var(--primary-dark);
+}
+
+/* Background animation with dynamic gradient */
+body {
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
+/* Gradient shift animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
