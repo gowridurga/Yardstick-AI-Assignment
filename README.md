@@ -14,6 +14,7 @@ Frontend:
    Recharts for data visualization
    CSS for styling
    Backend
+   
 Node.js:
    Express.js
    MongoDB for data storage
@@ -27,10 +28,12 @@ Transactions:
       POST /api/transactions - Create a new transaction
       PUT /api/transactions/:id - Update a transaction
       DELETE /api/transactions/:id - Delete a transaction
+      
 Categories:
       GET /api/categories - Get all categories
       POST /api/categories - Create a new category
       DELETE /api/categories/:id - Delete a category
+      
 Budgets:
       GET /api/budgets - Get all budgets
       GET /api/budgets/:id - Get a single budget
@@ -46,11 +49,13 @@ Data Models
   description: String,
   category: String
 }
+
 Category
 {
   _id: ObjectId,
   name: String
 }
+
 Budget
 {
   _id: ObjectId,
@@ -58,6 +63,7 @@ Budget
   amount: Number,
   month: String // Format: "YYYY-MM"
 }
+
 Usage
 
 Adding Transactions
